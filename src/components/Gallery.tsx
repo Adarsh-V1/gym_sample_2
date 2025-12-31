@@ -1,9 +1,13 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { gymContent } from "@/data/gym/content";
+import { type GymContent } from "@/data/gym/content";
 
-export const Gallery = () => {
-  const images = gymContent.gallery || [];
+interface GalleryProps {
+  data: GymContent;
+}
+
+export const Gallery = ({ data }: GalleryProps) => {
+  const images = data.gallery || [];
   if (!images.length) return null;
 
   return (

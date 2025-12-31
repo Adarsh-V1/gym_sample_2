@@ -128,3 +128,23 @@ section {
 #hero {
   isolation: isolate; /* create new stacking context */
 }
+
+/* Compact navbar sizing */
+nav,
+header nav,
+.navbar {
+  --nav-py: 0.85rem;
+}
+nav > .page-container,
+header nav > .page-container,
+.navbar > .page-container {
+  padding-top: var(--nav-py) !important;
+  padding-bottom: var(--nav-py) !important;
+}
+@media (min-width: 768px) {
+  nav,
+  header nav,
+  .navbar {
+    --nav-py: 1rem;
+  }
+}

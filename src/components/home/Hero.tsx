@@ -11,13 +11,6 @@ export const Hero = () => {
 		"Motivating Atmosphere",
 	];
 
-	const featureCards = [
-		{ t: "Pro Guidance", d: "Proactive, professional trainers for form and progression." },
-		{ t: "Premium Machines", d: "Well‑maintained equipment for strength & cardio." },
-		{ t: "Clean Routine", d: "Sanitized spaces and organized layout." },
-		{ t: "Solid Service", d: "Supportive staff and quick assistance." },
-	];
-
 	return (
 		<section id="hero" className="relative min-h-[90vh] flex items-center justify-center text-white overflow-visible pt-4 md:pt-6 pb-8 md:pb-12">
 			{/* Background image with overlay */}
@@ -47,14 +40,14 @@ export const Hero = () => {
 						{gymContent.name}
 					</motion.h1>
 
-					{/* Motivational Quote */}
+					{/* Tagline */}
 					<motion.p
 						initial={{ opacity: 0, y: 10 }}
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ delay: 0.1, duration: 0.5 }}
 						className="text-xl md:text-2xl font-light italic text-gray-300"
 					>
-						"Progress is built, one focused rep at a time."
+						"{gymContent.tagline}"
 					</motion.p>
 
 					{/* Opening Announcement */}
@@ -77,13 +70,12 @@ export const Hero = () => {
 						className="space-y-4 max-w-2xl"
 					>
 						<p className="text-xl md:text-2xl font-semibold text-white/95 leading-relaxed">
-							Modern fitness studio in Chitra Complex, Bhuwana
+							{gymContent.about}
 						</p>
 						<div className="space-y-3 text-base md:text-lg text-white/85">
 							<p>
-								<span className="font-bold text-orange-300">Hours:</span> 6:00 AM — 10:00 PM
+								<span className="font-bold text-orange-300">Hours:</span> {gymContent.openingHours}
 							</p>
-							<p className="text-white/75">Closed on Sundays</p>
 						</div>
 						<p className="text-base md:text-lg text-white/85 pt-2">
 							Certified trainers · Premium equipment · Flexible memberships
@@ -126,16 +118,16 @@ export const Hero = () => {
 						transition={{ delay: 0.8, duration: 0.6 }}
 						className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 w-full max-w-4xl"
 					>
-						{featureCards.map(card => (
+						{gymContent.facilities.slice(0, 4).map((facility, idx) => (
 							<div
-								key={card.t}
+								key={facility.title}
 								className="p-4 rounded-lg bg-white/5 border border-gray-700/50 backdrop-blur hover:border-orange-400/50 hover:bg-white/10 transition-all group"
 							>
 								<h5 className="text-sm font-bold text-orange-300 group-hover:text-orange-200 transition-colors">
-									{card.t}
+									{facility.title}
 								</h5>
 								<p className="text-xs text-gray-300 mt-2 leading-relaxed">
-									{card.d}
+									{facility.description}
 								</p>
 							</div>
 						))}

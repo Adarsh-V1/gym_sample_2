@@ -35,49 +35,41 @@ export interface GymContent {
 }
 
 export const gymContent: GymContent = {
-  name: "Scult Fit",
-  tagline: "Scult Fit",
+  name: "Shree Pahlwan Body Care",
+  tagline: "Progress is built, one focused rep at a time.",
   address:
-    "Chitra complex, In front of Kingdom of chess, above Natural beauty parlour, cross roads school road, New Navratan, Bhuwana, Udaipur, Rajasthan 313004",
-  phone: "083023 72719",
-  // Update phones array with both numbers
-  phones: ["+91 99286 07314", "+91 80004 98021"],
+    "Vidhyuth Nagar, Khandwa Taraf Kumbhi, Khandwa, Madhya Pradesh 450001",
+  phone: "084638 46846",
+  phones: ["+91 84638 46846"],
   logo: "/assets/change/5.jpg",
-  openingHours: "Opens 6:00 am · Closes 10:00 pm · Closed on Sunday",
+  openingHours: "Opens 6:00 AM · Closes 11:40 PM",
   googleMapEmbedUrl:
-    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29017.300804222552!2d73.6586990743164!3d24.618080100000007!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3967e5006c8d9587%3A0xb6ed25de4da1f729!2sScult%20Fit%20Gym!5e0!3m2!1sen!2sin!4v1767102215965!5m2!1sen!2sin",
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3670.5!2d75.4!3d21.8!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjHCsDQ4JzAwLjAiTiA3NcKwMjQnMDAuMCJF!5e0!3m2!1sen!2sin!4v1234567890",
   about:
-    "Welcome to Scult Fit, your premier fitness destination in Bhuwana, Udaipur. We pride ourselves on creating an motivating environment where every member from complete beginners to seasoned athletes can achieve their fitness goals. Join our growing community and experience the difference that professional guidance, quality equipment, and genuine support can make in your fitness journey.",
+    "Modern fitness studio in Khandwa. We provide certified trainers, premium equipment, and flexible memberships. Join our community and achieve your fitness goals with us.",
   facilities: [
-    { title: "On-site services", description: "In-person classes and personal training." },
-    { title: "Restroom", description: "Clean, well-maintained restrooms." },
-    { title: "LGBTQ+ friendly", description: "Welcoming and inclusive environment." },
-    { title: "Membership required", description: "Membership required to access the facility." },
-    { title: "Parking", description: "Free street parking available." }
+    { title: "Certified Trainers", description: "Proactive, professional trainers for form and progression." },
+    { title: "Premium Machines", description: "Well‑maintained equipment for strength & cardio." },
+    { title: "Clean Routine", description: "Sanitized spaces and organized layout." },
+    { title: "Solid Service", description: "Supportive staff and quick assistance." },
+    { title: "Motivating Atmosphere", description: "Friendly members fostering motivation." }
   ],
-  pricing: [
-    { plan: "Monthly", amount: "INR 1,500" },
-    { plan: "Quarterly", amount: "INR 4,200" },
-    { plan: "Yearly", amount: "INR 15,000" }
-  ],
-  trainers: [
-    { name: "Head Coach", speciality: "Strength & Conditioning · Personal Training", image: "" },
-    { name: "Senior Coach", speciality: "Cardio & Functional Training", image: "" }
-  ],
+  pricing: [],
+  trainers: [],
   gallery: [
     "/assets/change/1.jpg",
     "/assets/change/2.jpg",
     "/assets/change/3.jpg"
   ],
   reviews: [
-    { author: "Rohan S.", rating: 5, text: "Clean gym, great equipment, and the trainers really care about form." },
-    { author: "Neha P.", rating: 4, text: "Friendly staff and supportive vibe. Love the atmosphere here." },
-    { author: "Amit K.", rating: 5, text: "Plenty of space and machines. Progressed faster with their guidance." }
+    { author: "Shivam Gour", rating: 5, text: "Nice training centre" },
+    { author: "Sandeep", rating: 5, text: "Best gym in Khandwa" },
+    { author: "Vijit Verma", rating: 5, text: "Nice gym, great amenities" }
   ],
   links: [
     {
       label: "Directions",
-      url: "https://maps.app.goo.gl/AKarnLRNJqscK3cZ8",
+      url: "https://maps.app.goo.gl/khandwa-shree-pahlwan",
     }
   ]
 };

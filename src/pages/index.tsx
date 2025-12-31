@@ -25,9 +25,9 @@ const GymHome = () => {
       <div aria-hidden="true" className="starfield-bg fixed inset-0 -z-50 pointer-events-none" />
       <main className="text-gray-100 flex flex-col gap-28">
         <Navbar name={gymContent.name} />
-        <Hero />
+        <Hero data={gymContent} />
         <About data={gymContent} />
-        <Gallery />
+        <Gallery data={gymContent} />
         <Facilities data={gymContent} />
         <Pricing data={gymContent} />
         <Reviews data={gymContent} />
