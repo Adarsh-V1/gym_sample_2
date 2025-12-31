@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// Dark mode CSS variables (default only)
+:root {
+  --bg-primary: #000000;
+  --bg-secondary: #050505;
+  --bg-tertiary: #0a0a0a;
+  --bg-quaternary: #030303;
+  --text-primary: #f5f5f7;
+  --text-secondary: #f3f4f6;
+  --text-tertiary: #e5e7eb;
+  --border-color: #1f2937;
+  --noise-opacity: 0.08;
+  --glow-opacity: 0.04;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 15px;
+}
+
+@media (min-width: 640px) {
+  html {
+    font-size: 16px;
+  }
+}
+@media (min-width: 1280px) {
+  html {
+    font-size: 17px;
+  }
+}
+
+body {
+  // much darker gradient: pure blacks with minimal variation
+  background: linear-gradient(
+    135deg,
+    var(--bg-primary) 0%,
+    var(--bg-secondary) 15%,
+    var(--bg-tertiary) 30%,
+    var(--bg-quaternary) 50%,
+    var(--bg-primary) 70%,
+    var(--bg-secondary) 100%
+  );
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-family: system-ui, sans-serif;
+  
+  position: relative;
+}
+
+// Enhanced noise/grain texture overlay
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: 
+    url("data:image/svg+xml,%3Csvg width='200' height='200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='5' result='noise' seed='3'/%3E%3C/filter%3E%3Crect width='200' height='200' fill='%23000' filter='url(%23noise)' opacity='0.08'/%3E%3C/svg%3E"),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(255, 255, 255, 0.02) 2px,
+      rgba(255, 255, 255, 0.02) 4px
+    );
+  background-size: 200px 200px, 100% 4px;
+  pointer-events: none;
+  z-index: -35;
+  mix-blend-mode: overlay;
+  opacity: var(--noise-opacity);
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 120% 100% at 50% 0%,
+    rgba(255, 255, 255, var(--glow-opacity)) 0%,
+    transparent 60%
+  );
+  pointer-events: none;
+  z-index: -40;
+}
+
+// Increase text contrast globally
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-primary);
+}
+
+p, span, div, a {
+  color: var(--text-secondary);
+}
+
+section {
+  @apply py-20;
+  position: relative; /* ensure sections create stacking context */
+}
+
+/* Consistent horizontal margins for all sections */
+.page-container {
+  @apply w-full max-w-6xl mx-auto px-6 md:px-10;
+}
+
+.starfield-bg {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: -50;
+  opacity: 0.13;
+  /* Subtle, sparse, random starfield using SVG data URI */
+  background:
+    url("data:image/svg+xml;utf8,<svg width='1000' height='1000' xmlns='http://www.w3.org/2000/svg'><circle cx='120' cy='80' r='1.2' fill='white' opacity='0.7'/><circle cx='300' cy='200' r='0.8' fill='white' opacity='0.5'/><circle cx='700' cy='150' r='1.1' fill='white' opacity='0.8'/><circle cx='900' cy='400' r='0.7' fill='white' opacity='0.4'/><circle cx='500' cy='600' r='1.4' fill='white' opacity='0.9'/><circle cx='800' cy='800' r='0.9' fill='white' opacity='0.6'/><circle cx='200' cy='900' r='1.2' fill='white' opacity='0.7'/><circle cx='600' cy='300' r='0.6' fill='white' opacity='0.3'/><circle cx='400' cy='850' r='1.1' fill='white' opacity='0.8'/><circle cx='950' cy='950' r='0.5' fill='white' opacity='0.2'/></svg>")
+    repeat;
+  background-size: 600px 600px;
+  animation: starfield-float 120s linear infinite;
+}
+
+@keyframes starfield-float {
+  0% { background-position: 0 0; }
+  100% { background-position: 200px 400px; }
+}
+
+/* Ensure Hero and other sections don't conflict */
+#hero {
+  isolation: isolate; /* create new stacking context */
+}
