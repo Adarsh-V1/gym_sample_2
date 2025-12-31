@@ -69,7 +69,11 @@ export const gymContent: GymContent = {
     "/assets/change/2.jpg",
     "/assets/change/3.jpg"
   ],
-  reviews: [],
+  reviews: [
+    { author: "Rohan S.", rating: 5, text: "Clean gym, great equipment, and the trainers really care about form." },
+    { author: "Neha P.", rating: 4, text: "Friendly staff and supportive vibe. Love the atmosphere here." },
+    { author: "Amit K.", rating: 5, text: "Plenty of space and machines. Progressed faster with their guidance." }
+  ],
   links: [
     {
       label: "Directions",
