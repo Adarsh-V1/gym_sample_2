@@ -108,7 +108,7 @@ export const Hero = ({ data }: HeroProps) => {
         </motion.div>
 
         {/* Highlight badges */}
-        <motion.motion.ul
+        <motion.ul
           custom={3.5}
           initial="hidden"
           animate="show"
@@ -126,7 +126,7 @@ export const Hero = ({ data }: HeroProps) => {
               ✓ {badge}
             </motion.li>
           ))}
-        </motion.motion.ul>
+        </motion.ul>
 
         {/* Facilities grid */}
         <motion.div
