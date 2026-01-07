@@ -122,7 +122,7 @@ export const Hero = ({ data }: HeroProps) => {
             transition={{ delay: 0.8, duration: 0.6 }}
             className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 w-full max-w-4xl"
           >
-            {data.facilities.slice(0, 4).map((facility, idx) => (
+            {data.facilities.slice(0, 4).map((facility, _idx) => (
               <div
                 key={facility.title}
                 className="p-4 rounded-lg bg-white/5 border border-gray-700/50 backdrop-blur hover:border-orange-400/50 hover:bg-white/10 transition-all group"
